@@ -22,9 +22,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Manda a llamar el contenido que este en la tabla TODO
 // Route::get('pacientes', [PacienteController::class, 'index' ]);
 
-    Route::get('pacientes', [PacienteController::class, 'index']);
-    Route::post('pacientes', [PacienteController::class, 'store']);
-    Route::get('pacientes/{paciente}', [PacienteController::class, 'show']);
-    Route::put('pacientes/{paciente}', [PacienteController::class, 'update']);
-    Route::delete('pacientes/{paciente}', [PacienteController::class, 'destroy']);
+    // Route::get('pacientes', [PacienteController::class, 'index']);
+    // Route::post('pacientes', [PacienteController::class, 'store']);
+    // Route::get('pacientes/{paciente}', [PacienteController::class, 'show']);
+    // Route::put('pacientes/{paciente}', [PacienteController::class, 'update']);
+    // Route::delete('pacientes/{paciente}', [PacienteController::class, 'destroy']);
 
+    //Optimizado
+        Route::apiResource('pacientes', PacienteController::class);
