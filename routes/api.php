@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\PacienteController;
+use App\Http\Controllers\AutenticarController;
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +31,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     // Route::delete('pacientes/{paciente}', [PacienteController::class, 'destroy']);
 
     //Optimizado
+    Route::post('registro' , [AutenticarController::class,'registro']);
+    Route::post('acceso' , [AutenticarController::class,'acceso']);
+    Route::group(['middleware' => ['auth:sanctum']], function(){
+        Route::post('cerrarsesion' , [AutenticarController::class,'cerrarSesion']);
         Route::apiResource('pacientes', PacienteController::class);
+    });
+
