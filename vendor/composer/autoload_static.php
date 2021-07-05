@@ -507,6 +507,7 @@ class ComposerStaticInit4ff112d760338bff29977c332a4c6282
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\API\\AutenticarController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/AutenticarController.php',
         'App\\Http\\Controllers\\API\\PacienteController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/PacienteController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -518,8 +519,10 @@ class ComposerStaticInit4ff112d760338bff29977c332a4c6282
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\AccesoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/AccesoRequest.php',
         'App\\Http\\Requests\\ActualizarPacienteRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ActualizarPacienteRequest.php',
         'App\\Http\\Requests\\GuardarPacienteRequest' => __DIR__ . '/../..' . '/app/Http/Requests/GuardarPacienteRequest.php',
+        'App\\Http\\Requests\\RegistroRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RegistroRequest.php',
         'App\\Http\\Resources\\PacienteResource' => __DIR__ . '/../..' . '/app/Http/Resources/PacienteResource.php',
         'App\\Models\\Paciente' => __DIR__ . '/../..' . '/app/Models/Paciente.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
