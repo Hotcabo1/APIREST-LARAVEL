@@ -40,7 +40,7 @@ class Handler extends ExceptionHandler
             //
         });
     }
-
+    /*PURAS EXCEPCIONES */
     protected function invalidJson($request, ValidationException $exception)
     {
         return response()->json([
@@ -60,5 +60,5 @@ class Handler extends ExceptionHandler
         return parent::render($request, $exception);
     }
 
-
+    /*AL MANEJAR APIS DEVOLVER LA DATA ESTRUCTURADA */
 }

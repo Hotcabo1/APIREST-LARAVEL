@@ -23,6 +23,7 @@ class AutenticarController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
+        $user->roles()->attach($request->roles);
 
         return response()->json([
             'res' => true,
@@ -33,7 +34,7 @@ class AutenticarController extends Controller
 
     public function acceso(AccesoRequest $request)
     {
-        $user = User::where('email', $request->email)->first();
+        $user = User::with('roles')->where('email', $request->email)->first();
 
         if (! $user || ! Hash::check($request->password, $user->password)) {
              throw ValidationException::withMessages([
@@ -45,7 +46,10 @@ class AutenticarController extends Controller
 
         return response()->json([
             'res' => true,
-            'token' => $token
+            'msg' => [
+                'token' => $token,
+                'usuario' => $user
+            ]
         ],200);
     }
     public function cerrarSesion(Request $request){
